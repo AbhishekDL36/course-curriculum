@@ -1,4 +1,4 @@
-/* General Styling */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,12 +6,11 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Body */
+
 body {
   height: 100vh;
   background: linear-gradient(135deg, #1a202c, #2d3748);
@@ -19,40 +18,41 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Dark Mode */
+
 .dark-mode {
   background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
   color: #fff;
 }
 
-/* Header */
 .header {
-  background: rgba(255, 255, 255, 0.1);
+  background: #1a1a1a; 
+  color: white;
   backdrop-filter: blur(10px);
-  padding: 15px 50px;
+  padding: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
 }
 
-/* Dark Mode Navbar */
+
+
+
 .dark-mode .header {
   background: rgba(0, 0, 0, 0.8);
 }
 
-/* Logo */
+
 .logo-img {
   height: 50px;
   width: auto;
 }
 
-/* Navigation */
+
 .nav-links {
   display: flex;
 }
@@ -75,7 +75,7 @@ body {
   color: #90cdf4;
 }
 
-/* Toggle Button */
+
 .toggle-btn {
   background: none;
   border: 1px solid white;
@@ -91,14 +91,14 @@ body {
   color: black;
 }
 
-/* Dark Mode Card Styles */
+
 .dark-mode .card {
   background: #1e1e1e;
   color: white;
   box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
 }
 
-/* Hamburger Menu */
+
 .menu-toggle {
   display: none;
   font-size: 24px;
@@ -108,7 +108,7 @@ body {
   cursor: pointer;
 }
 
-/* Responsive Navbar */
+
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -145,7 +145,7 @@ body {
 }
 
 .cards-container {
-  margin-top: 200px; /* Navbar ke neeche shift karne ke liye */
+  margin-top: 200px; 
   display: flex;
   gap: 30px;
   justify-content: center;
@@ -153,8 +153,13 @@ body {
   width: 100%;
 }
 
+.cards-container .card {
+  background: #f5f5f5; /* Light gray background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-/* Card Styling */
 .card {
   background: linear-gradient(135deg, #ffffff, #e2e8f0);
   border-radius: 12px;
@@ -170,7 +175,6 @@ body {
   color: #2d3748;
 }
 
-/* Card Hover Effect */
 .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
@@ -186,7 +190,6 @@ body {
   color: #4a5568;
 }
 
-/* Button */
 .card .cta-button {
   background: #3182ce;
   color: white;
@@ -202,7 +205,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Responsive Cards */
 @media (max-width: 768px) {
   .cards-container {
     flex-direction: column;

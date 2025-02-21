@@ -1,39 +1,40 @@
-
-
-
-
 import React, { useState, useEffect } from 'react';
 import Card from './Card';
 import logo from './assets/unnamed.png';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    document.body.className = darkMode ? "dark-mode" : "";
+    document.body.className = darkMode ? 'dark-mode' : '';
   }, [darkMode]);
 
   return (
     <div className="landing-page">
       {/* Navbar */}
-      <header className={`header ${darkMode ? "dark" : ""}`}>
+      <header className={`header ${darkMode ? 'dark' : ''}`}>
         <div className="logo">
           <img src={logo} alt="Logo" className="logo-img" />
         </div>
 
-        <nav className="nav-links">
+        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? '✖' : '☰'}
+        </button>
+
+        <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/web-designing">Web Designing</a></li>
-            <li><a href="/frontend">Frontend</a></li>
-            <li><a href="/full-stack">Full Stack</a></li>
-            <li><a href="/faqs">FAQs</a></li>
+            <li><a href="/" onClick={() => setMenuOpen(false)}>Home</a></li>
+            <li><a href="/web-designing" onClick={() => setMenuOpen(false)}>Web Designing</a></li>
+            <li><a href="/frontend" onClick={() => setMenuOpen(false)}>Frontend</a></li>
+            <li><a href="/full-stack" onClick={() => setMenuOpen(false)}>Full Stack</a></li>
+            <li><a href="/faqs" onClick={() => setMenuOpen(false)}>FAQs</a></li>
           </ul>
         </nav>
 
         {/* Dark Mode Toggle Button */}
         <button className="toggle-btn" onClick={() => setDarkMode(!darkMode)}>
-          {darkMode ? "🌞 Light Mode" : "🌙 Dark Mode"}
+          {darkMode ? '🌞 Light Mode' : '🌙 Dark Mode'}
         </button>
       </header>
 
@@ -49,4 +50,3 @@ const App = () => {
 };
 
 export default App;
-
