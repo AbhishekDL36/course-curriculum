@@ -1,4 +1,4 @@
-
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -10,77 +10,69 @@ html {
   scroll-behavior: smooth;
 }
 
-
 body {
   height: 100vh;
-  background: linear-gradient(135deg, #1a202c, #2d3748);
-  color: #fff;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-
-.dark-mode {
-  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
-  color: #fff;
+/* Light Mode (Aqua Theme) */
+body {
+  background: linear-gradient(to bottom, #26545b, #1e7682); /* Aqua gradient */
+  color: #333;
 }
 
+/* Dark Mode */
+.dark-mode {
+  background: #121212;
+  color: #ffffff;
+}
+
+/* Header (Always White with Aqua Tint) */
 .header {
-  background: #1a1a1a; 
-  color: white;
+  background: rgba(255, 255, 255, 0.85); /* White with slight transparency */
+  color: black;
   backdrop-filter: blur(10px);
-  padding: 15px;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
   width: 100%;
- 
-    box-shadow: 0px 1px 4px white;
-  
+  z-index: 1000;
+  box-shadow: 0px 4px 6px rgba(0, 170, 255, 0.2);
 }
 
-
-
-
-.dark-mode .header {
-  background-color: #222; /* Thoda light dark shade */
-}
-
+/* Logo */
 .logo-img {
   height: 50px;
   width: auto;
 }
 
-
-.nav-links {
-  display: flex;
-}
-
+/* Navigation */
 .nav-links ul {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 20px;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #fff;
-  font-size: 1.1rem;
+  color: black;
+  font-size: 1rem;
   font-weight: 600;
   transition: color 0.3s ease-in-out;
 }
 
 .nav-links a:hover {
-  color: #90cdf4;
+  color: #0288D1; /* Darker Aqua */
 }
 
-
+/* Toggle Button */
 .toggle-btn {
-  background: none;
-  border: 1px solid white;
+  background: #0288D1; /* Aqua Blue */
+  border: none;
   color: white;
   padding: 8px 15px;
   cursor: pointer;
@@ -89,28 +81,34 @@ body {
 }
 
 .toggle-btn:hover {
+  background: #01579B;
+}
+
+/* Dark Mode Adjustments */
+.dark-mode .nav-links a {
+  color: black;
+}
+
+.dark-mode .toggle-btn {
   background: white;
   color: black;
 }
 
-
-.dark-mode .card {
-  background: #1e1e1e;
-  color: black;
-  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
-}
-
-
+/* Mobile Menu Toggle */
 .menu-toggle {
   display: none;
   font-size: 24px;
   background: none;
   border: none;
-  color: white;
+  color: black;
   cursor: pointer;
 }
 
+.dark-mode .menu-toggle {
+  color: black;
+}
 
+/* Responsive Navigation */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -121,12 +119,13 @@ body {
     top: 60px;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.9);
+    background: white;
     display: none;
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   }
 
   .nav-links.open {
@@ -146,8 +145,9 @@ body {
   }
 }
 
+/* Cards Container */
 .cards-container {
-  margin-top: 200px; 
+  margin-top: 200px;
   display: flex;
   gap: 30px;
   justify-content: center;
@@ -155,19 +155,13 @@ body {
   width: 100%;
 }
 
-.cards-container .card {
-  background: #f5f5f5; /* Light gray background */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
+/* Cards */
 .card {
-  background: linear-gradient(135deg, #ffffff, #e2e8f0);
+  background: white;
   border-radius: 12px;
   width: 280px;
   height: 320px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px rgba(0, 170, 255, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   padding: 20px;
   display: flex;
@@ -179,21 +173,19 @@ body {
 
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 15px 30px rgba(0, 170, 255, 0.4);
 }
 
-.card h3 {
-  font-size: 1.6rem;
-  font-weight: 700;
+/* Dark Mode Cards */
+.dark-mode .card {
+  background: #1e1e1e;
+  color: white;
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
 }
 
-.card p {
-  font-size: 1rem;
-  color: #4a5568;
-}
-
+/* Card Button */
 .card .cta-button {
-  background: #3182ce;
+  background: #0288D1;
   color: white;
   padding: 12px 24px;
   border-radius: 8px;
@@ -203,10 +195,11 @@ body {
 }
 
 .card .cta-button:hover {
-  background: #2b6cb0;
+  background: #01579B;
   transform: scale(1.05);
 }
 
+/* Responsive Cards */
 @media (max-width: 768px) {
   .cards-container {
     flex-direction: column;
