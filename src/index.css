@@ -37,15 +37,17 @@ body {
   left: 0;
   z-index: 1000;
   width: 100%;
+ 
+    box-shadow: 0px 1px 4px white;
+  
 }
 
 
 
 
 .dark-mode .header {
-  background: rgba(0, 0, 0, 0.8);
+  background-color: #222; /* Thoda light dark shade */
 }
-
 
 .logo-img {
   height: 50px;
@@ -94,7 +96,7 @@ body {
 
 .dark-mode .card {
   background: #1e1e1e;
-  color: white;
+  color: black;
   box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
 }
 
