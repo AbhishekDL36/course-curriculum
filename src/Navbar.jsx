@@ -1,11 +1,11 @@
-/* eslint-disable react/prop-types */
 
 
     // eslint-disable-next-line no-unused-vars
-    import React, { useState } from 'react';
+    import  React,{ useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from './assets/unnamed.png';
 
+// eslint-disable-next-line react/prop-types
 const Navbar = ({ darkMode, setDarkMode }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
