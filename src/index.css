@@ -20,7 +20,9 @@ body {
   background: linear-gradient(to bottom, #26545b, #1e7682); /* Aqua gradient */
   color: #333;
 }
-
+a{
+  text-decoration: none;
+}
 /* Dark Mode */
 .dark-mode {
   background: #121212;
@@ -87,6 +89,7 @@ body {
 /* Dark Mode Adjustments */
 .dark-mode .nav-links a {
   color: black;
+ 
 }
 
 .dark-mode .toggle-btn {
@@ -178,8 +181,9 @@ body {
 
 /* Dark Mode Cards */
 .dark-mode .card {
-  background: #1e1e1e;
+  background: #4e504f9f;
   color: white;
+  border: 2px solid white;
   box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
 }
 
