@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const Card = ({ title, description, name }) => {
+
+const Card = ({ title, description}) => {
   return (
     <div className="card">
       <h3>{title}</h3>
