@@ -79,6 +79,13 @@ body {
     color: #444;
     margin-top: 20px;
   }
+  .output-frame {
+    width: 100%;
+    height: 300px;
+    border: 1px solid #ccc;
+    margin-top: 15px;
+  }
+  
   
   .learn-btn {
     background: #4a47a3;
