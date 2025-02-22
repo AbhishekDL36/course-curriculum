@@ -2,13 +2,14 @@
 
 
 // eslint-disable-next-line no-unused-vars
-import React, { useState, useEffect } from 'react';
+import  React,{ useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import WebDesigning from './Web-designing';
 import Navbar from './Navbar';
 import Card from './Card';
 import Frontend from './Frontend';
 import FullStack from './FullStack';
+import FAQ from './FAQ';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -34,6 +35,7 @@ const App = () => {
         <Route path="/web-designing" element={<WebDesigning />} />
         <Route path='/frontend' element={<Frontend/>}/>
         <Route path='/full-stack' element={<FullStack/>}/>
+        <Route path='/faqs' element={<FAQ/>}/>
       </Routes>
     </div>
   );
