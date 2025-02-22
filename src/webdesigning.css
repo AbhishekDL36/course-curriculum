@@ -1,8 +1,20 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #2A6D73, #1D4D53);
+  margin: 0;
+}
+
+
 .web-designing-container {
     max-width: 800px;
     margin: auto;
+    margin-top: 100px;
     padding: 20px;
     font-family: Arial, sans-serif;
+  
   }
   
   .content-box {
@@ -55,7 +67,7 @@
     background: #0056b3;
   }
   
-  /* CodeMirror Editor Fix */
+  
   .editor-container {
     height: 200px;
     border: 1px solid #ccc;
@@ -64,7 +76,7 @@
     overflow: hidden;
   }
   
-  /* Output iframe fix */
+  
   .output-frame {
     width: 100%;
     height: 250px;

@@ -15,23 +15,23 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Light Mode (Aqua Theme) */
 body {
+  height: auto;
   background: linear-gradient(to bottom, #26545b, #1e7682); /* Aqua gradient */
   color: #333;
 }
 a{
   text-decoration: none;
 }
-/* Dark Mode */
+
 .dark-mode {
   background: #121212;
   color: #ffffff;
 }
 
-/* Header (Always White with Aqua Tint) */
+
 .header {
-  background: rgba(255, 255, 255, 0.85); /* White with slight transparency */
+  background: rgba(255, 255, 255, 0.85); 
   color: black;
   backdrop-filter: blur(10px);
   padding: 15px 20px;
@@ -46,13 +46,13 @@ a{
   box-shadow: 0px 4px 6px rgba(0, 170, 255, 0.2);
 }
 
-/* Logo */
+
 .logo-img {
   height: 50px;
   width: auto;
 }
 
-/* Navigation */
+
 .nav-links ul {
   list-style: none;
   display: flex;
@@ -68,12 +68,12 @@ a{
 }
 
 .nav-links a:hover {
-  color: #0288D1; /* Darker Aqua */
+  color: #0288D1; 
 }
 
-/* Toggle Button */
+
 .toggle-btn {
-  background: #0288D1; /* Aqua Blue */
+  background: #0288D1; 
   border: none;
   color: white;
   padding: 8px 15px;
@@ -86,7 +86,7 @@ a{
   background: #01579B;
 }
 
-/* Dark Mode Adjustments */
+
 .dark-mode .nav-links a {
   color: black;
  
@@ -97,7 +97,7 @@ a{
   color: black;
 }
 
-/* Mobile Menu Toggle */
+
 .menu-toggle {
   display: none;
   font-size: 24px;
@@ -111,7 +111,7 @@ a{
   color: black;
 }
 
-/* Responsive Navigation */
+
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -148,7 +148,7 @@ a{
   }
 }
 
-/* Cards Container */
+
 .cards-container {
   margin-top: 200px;
   display: flex;
@@ -158,7 +158,6 @@ a{
   width: 100%;
 }
 
-/* Cards */
 .card {
   background: white;
   border-radius: 12px;
@@ -179,7 +178,7 @@ a{
   box-shadow: 0 15px 30px rgba(0, 170, 255, 0.4);
 }
 
-/* Dark Mode Cards */
+
 .dark-mode .card {
   background: #4e504f9f;
   color: white;
@@ -187,7 +186,7 @@ a{
   box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
 }
 
-/* Card Button */
+
 .card .cta-button {
   background: #0288D1;
   color: white;
@@ -203,7 +202,7 @@ a{
   transform: scale(1.05);
 }
 
-/* Responsive Cards */
+
 @media (max-width: 768px) {
   .cards-container {
     flex-direction: column;

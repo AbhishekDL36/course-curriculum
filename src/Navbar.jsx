@@ -29,7 +29,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
         </ul>
       </nav>
 
-      {/* Dark Mode Toggle Button */}
+      
       <button className="toggle-btn" onClick={() => setDarkMode(!darkMode)}>
         {darkMode ? '🌞 Light Mode' : '🌙 Dark Mode'}
       </button>
