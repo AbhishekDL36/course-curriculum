@@ -78,7 +78,7 @@ const WebDesigning = () => {
           Mastering HTML & CSS is the first step to becoming a great web
           designer! 🎨
         </p>
-        <button className="learn-btn">Start Learning</button>
+     
 
       
         <h2 className="sub-heading">Try It Yourself 👇</h2>
