@@ -27,9 +27,9 @@ const App = () => {
         <Route path="/" element={
           <div className="cards-container">
             <Card title="Web Designing" description="Create visually stunning websites." name="/web-designing" />
-            <Card title="Frontend Development" description="Build dynamic interfaces." />
-            <Card title="Full Stack Development" description="Master both front-end & back-end." />
-            <Card title="FAQs" description="Check out our frequently asked questions." />
+            <Card title="Frontend Development" description="Build dynamic interfaces." name="/frontend"/>
+            <Card title="Full Stack Development" description="Master both front-end & back-end." name="/full-stack"/>
+            <Card title="FAQs" description="Check out our frequently asked questions." name="/faqs"/>
           </div>
         } />
         <Route path="/web-designing" element={<WebDesigning />} />
