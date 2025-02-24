@@ -52,7 +52,7 @@
    
      .code-block {
       background: #272822;
-      color: #fff;
+      color:white;
       padding: 12px;
       border-radius: 6px;
       overflow-x: auto;
@@ -89,7 +89,8 @@
       margin: 15px 0;
       border-radius: 6px;
       overflow: hidden;
-      background: #fff;
+      color: black;
+      background: #ffffff55;
     }
     
   
@@ -100,6 +101,7 @@
       border-radius: 6px;
       margin-top: 12px;
       background: #fff;
+    
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
     
@@ -115,7 +117,6 @@
     }
   
   
-
   @media (max-width: 768px) {
     .web-designing-container {
       padding: 15px;

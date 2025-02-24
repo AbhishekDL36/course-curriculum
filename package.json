@@ -2,13 +2,12 @@
   "name": "course-curriculum",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "lint": "eslint ."
+},
+
   "dependencies": {
     "@codemirror/basic-setup": "^0.20.0",
     "@codemirror/commands": "^6.8.0",
@@ -18,12 +17,11 @@
     "@codemirror/lang-xml": "^6.1.0",
     "@codemirror/state": "^6.5.2",
     "@codemirror/view": "^6.36.3",
-    "body-parser": "^1.20.3",
     "codemirror": "^6.0.1",
-    "express": "^4.21.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.2.0"
+    "react-router-dom": "^7.2.0",
+    "vm2": "^3.9.19"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",

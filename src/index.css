@@ -28,6 +28,9 @@ a{
   background: #121212;
   color: #ffffff;
 }
+.dark-mode p {
+  color: black !important;
+}
 
 
 .header {
