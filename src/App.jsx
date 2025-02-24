@@ -10,6 +10,7 @@ import Card from './Card';
 import Frontend from './Frontend';
 import FullStack from './FullStack';
 import FAQ from './FAQ';
+import FormToDBVisualization from './Visualization';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -36,6 +37,7 @@ const App = () => {
         <Route path='/frontend' element={<Frontend/>}/>
         <Route path='/full-stack' element={<FullStack/>}/>
         <Route path='/faqs' element={<FAQ/>}/>
+        <Route path='/visualization' element={<FormToDBVisualization/>}/>
       </Routes>
     </div>
   );

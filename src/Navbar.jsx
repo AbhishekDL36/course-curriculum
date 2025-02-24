@@ -26,6 +26,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           <li><Link to="/frontend" onClick={() => setMenuOpen(false)}>Frontend</Link></li>
           <li><Link to="/full-stack" onClick={() => setMenuOpen(false)}>Full Stack</Link></li>
           <li><Link to="/faqs" onClick={() => setMenuOpen(false)}>FAQs</Link></li>
+          <li><Link to="/visualization" onClick={() => setMenuOpen(false)}>Visualization</Link></li>
         </ul>
       </nav>
 

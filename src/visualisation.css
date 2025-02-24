@@ -1,0 +1,79 @@
+/* General Styling */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Form Styling */
+  .form-container {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+  }
+  
+  .form-title {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .submit-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .submit-button:hover {
+    background: #0056b3;
+  }
+  
+  /* Server & Database Visualization */
+  .server-box,
+  .database-entry {
+    background: rgb(87, 191, 87);
+    padding: 15px;
+    border: 1px solid #ffeeba;
+    border-radius: 5px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .server-title,
+  .database-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .processing {
+    color: #d39e00;
+    font-style: italic;
+  }
+  
+  /* Animation Line */
+  .line {
+    height: 5px;
+    background: #28a745;
+    margin: 10px 0;
+  }
+  

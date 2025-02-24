@@ -2,12 +2,11 @@
   "name": "course-curriculum",
   "private": true,
   "version": "0.0.0",
-"scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "lint": "eslint ."
-},
-
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint ."
+  },
   "dependencies": {
     "@codemirror/basic-setup": "^0.20.0",
     "@codemirror/commands": "^6.8.0",
@@ -18,6 +17,7 @@
     "@codemirror/state": "^6.5.2",
     "@codemirror/view": "^6.36.3",
     "codemirror": "^6.0.1",
+    "framer-motion": "^12.4.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.2.0",
