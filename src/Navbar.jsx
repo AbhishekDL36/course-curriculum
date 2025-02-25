@@ -1,11 +1,10 @@
 
 
-    // eslint-disable-next-line no-unused-vars
     import  React,{ useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from './assets/unnamed.png';
 
-// eslint-disable-next-line react/prop-types
+
 const Navbar = ({ darkMode, setDarkMode }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -24,9 +23,9 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
           <li><Link to="/web-designing" onClick={() => setMenuOpen(false)}>Web Designing</Link></li>
           <li><Link to="/frontend" onClick={() => setMenuOpen(false)}>Frontend</Link></li>
-          <li><Link to="/full-stack" onClick={() => setMenuOpen(false)}>Full Stack</Link></li>
+          <li><Link to="/Full-Stack" onClick={() => setMenuOpen(false)}>Full Stack</Link></li>
           <li><Link to="/faqs" onClick={() => setMenuOpen(false)}>FAQs</Link></li>
-          <li><Link to="/visualization" onClick={() => setMenuOpen(false)}>Visualization</Link></li>
+         
         </ul>
       </nav>
 

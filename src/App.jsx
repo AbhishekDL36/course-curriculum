@@ -8,9 +8,10 @@ import WebDesigning from './Web-designing';
 import Navbar from './Navbar';
 import Card from './Card';
 import Frontend from './Frontend';
-import FullStack from './FullStack';
+
 import FAQ from './FAQ';
-import FormToDBVisualization from './Visualization';
+import FormToDBVisualization from './FullStack';
+
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -35,9 +36,9 @@ const App = () => {
         } />
         <Route path="/web-designing" element={<WebDesigning />} />
         <Route path='/frontend' element={<Frontend/>}/>
-        <Route path='/full-stack' element={<FullStack/>}/>
+        <Route path='/full-stack' element={<FormToDBVisualization/>}/>
         <Route path='/faqs' element={<FAQ/>}/>
-        <Route path='/visualization' element={<FormToDBVisualization/>}/>
+  
       </Routes>
     </div>
   );

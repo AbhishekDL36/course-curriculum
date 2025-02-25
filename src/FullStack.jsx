@@ -1,559 +1,78 @@
 
-// // // // eslint-disable-next-line no-unused-vars
-// // // import React, { useState, useEffect, useRef } from "react";
-// // // import { EditorState } from "@codemirror/state";
-// // // import { EditorView, keymap } from "@codemirror/view";
-// // // import { defaultKeymap } from "@codemirror/commands";
-// // // import { html } from "@codemirror/lang-html";
-// // // import { javascript } from "@codemirror/lang-javascript";
-// // // import { css } from "@codemirror/lang-css";
-// // // import "./frontendEditor.css";
 
-// // // const FullStackEditor = () => {
-// // //   const [htmlCode, setHtmlCode] = useState("<h1>Hello, World!</h1>");
-// // //   const [cssCode, setCssCode] = useState("h1 { color: blue; }");
-// // //   const [jsCode, setJsCode] = useState("console.log('Hello from JS');");
-// // //   const [backendCode, setBackendCode] = useState(
-// // //     `const express = require('express');\nconst app = express();\n\napp.get('/', (req, res) => {\n  res.send('Hello from the server!');\n});\n\napp.listen(3000, () => {\n  console.log('Server is running');\n});`
-// // //   );
 
-// // //   const iframeRef = useRef(null);
-// // //   const editorRefHTML = useRef(null);
-// // //   const editorRefCSS = useRef(null);
-// // //   const editorRefJS = useRef(null);
-// // //   const editorRefBackend = useRef(null);
-
-// // //   useEffect(() => {
-// // //     const startStateHTML = EditorState.create({
-// // //       doc: htmlCode,
-// // //       extensions: [
-// // //         keymap.of(defaultKeymap),
-// // //         html(),
-// // //         EditorView.updateListener.of((update) => {
-// // //           if (update.docChanged) {
-// // //             setHtmlCode(update.state.doc.toString());
-// // //           }
-// // //         }),
-// // //       ],
-// // //     });
-
-// // //     const startStateCSS = EditorState.create({
-// // //       doc: cssCode,
-// // //       extensions: [
-// // //         keymap.of(defaultKeymap),
-// // //         css(),
-// // //         EditorView.updateListener.of((update) => {
-// // //           if (update.docChanged) {
-// // //             setCssCode(update.state.doc.toString());
-// // //           }
-// // //         }),
-// // //       ],
-// // //     });
-
-// // //     const startStateJS = EditorState.create({
-// // //       doc: jsCode,
-// // //       extensions: [
-// // //         keymap.of(defaultKeymap),
-// // //         javascript(),
-// // //         EditorView.updateListener.of((update) => {
-// // //           if (update.docChanged) {
-// // //             setJsCode(update.state.doc.toString());
-// // //           }
-// // //         }),
-// // //       ],
-// // //     });
-
-// // //     const startStateBackend = EditorState.create({
-// // //       doc: backendCode,
-// // //       extensions: [
-// // //         keymap.of(defaultKeymap),
-// // //         html(), // Use HTML language for the backend code editor
-// // //         EditorView.updateListener.of((update) => {
-// // //           if (update.docChanged) {
-// // //             setBackendCode(update.state.doc.toString());
-// // //           }
-// // //         }),
-// // //       ],
-// // //     });
-
-// // //     new EditorView({
-// // //       state: startStateHTML,
-// // //       parent: editorRefHTML.current,
-// // //     });
-// // //     new EditorView({
-// // //       state: startStateCSS,
-// // //       parent: editorRefCSS.current,
-// // //     });
-// // //     new EditorView({
-// // //       state: startStateJS,
-// // //       parent: editorRefJS.current,
-// // //     });
-// // //     new EditorView({
-// // //       state: startStateBackend,
-// // //       parent: editorRefBackend.current,
-// // //     });
-// // //   }, []); // Only run once when the component mounts
-
-// // //   // Function to run the front-end code
-// // //   const runFrontEndCode = () => {
-// // //     const code = `
-// // //       <html>
-// // //         <head>
-// // //           <style>${cssCode}</style>
-// // //         </head>
-// // //         <body>
-// // //           ${htmlCode}
-// // //           <script>${jsCode}</script>
-// // //         </body>
-// // //       </html>
-// // //     `;
-// // //     if (iframeRef.current) {
-// // //       iframeRef.current.srcdoc = code;
-// // //     }
-// // //   };
-
-// // //   // Function to run the back-end code (send to backend server)
-// // //   const runBackEndCode = async () => {
-// // //     try {
-// // //       const response = await fetch("http://localhost:3000/run-backend", {
-// // //         method: "POST",
-// // //         headers: {
-// // //           "Content-Type": "application/json",
-// // //         },
-// // //         body: JSON.stringify({ backendCode }),
-// // //       });
-// // //       const result = await response.json();
-// // //       alert(result.message); // Show response from backend execution
-// // //     } catch (error) {
-// // //       alert("Error running backend code: " + error.message);
-// // //     }
-// // //   };
-
-// // //   return (
-// // //     <div className="web-designing-container">
-// // //       <div className="content-box">
-// // //         <h1 className="main-heading">Full-Stack Development Editor</h1>
-// // //         <p className="description">
-// // //           Write HTML, CSS, JavaScript for the frontend and Node.js (Express) for the backend. Click "Run" to see the live output!
-// // //         </p>
-
-// // //         <div className="section">
-// // //           <h2 className="sub-heading">HTML Code</h2>
-// // //           <div ref={editorRefHTML} className="editor-container"></div>
-
-// // //           <h2 className="sub-heading">CSS Code</h2>
-// // //           <div ref={editorRefCSS} className="editor-container"></div>
-
-// // //           <h2 className="sub-heading">JavaScript Code</h2>
-// // //           <div ref={editorRefJS} className="editor-container"></div>
-
-// // //           <h2 className="sub-heading">Backend Code (Node.js/Express)</h2>
-// // //           <div ref={editorRefBackend} className="editor-container"></div>
-// // //         </div>
-
-// // //         <button className="learn-btn" onClick={runFrontEndCode}>
-// // //           Run Front-End Code
-// // //         </button>
-
-// // //         <button className="learn-btn" onClick={runBackEndCode}>
-// // //           Run Back-End Code
-// // //         </button>
-
-// // //         <iframe ref={iframeRef} className="output-frame" title="output"></iframe>
-// // //       </div>
-// // //     </div>
-// // //   );
-// // // };
-
-// // // export default FullStackEditor;
-
-
-// // import React, { useState, useEffect, useRef } from "react";
-// // import { EditorState } from "@codemirror/state";
-// // import { EditorView, keymap } from "@codemirror/view";
-// // import { defaultKeymap } from "@codemirror/commands";
-// // import { html } from "@codemirror/lang-html";
-// // import { javascript } from "@codemirror/lang-javascript";
-// // import { css } from "@codemirror/lang-css";
-// // import "./frontendEditor.css";
-
-// // const FullStackEditor = () => {
-// //   const [htmlCode, setHtmlCode] = useState("<h1>Hello, World!</h1>");
-// //   const [cssCode, setCssCode] = useState("h1 { color: blue; }");
-// //   const [jsCode, setJsCode] = useState("console.log('Hello from JS');");
-// //   const [fakeBackendResponse, setFakeBackendResponse] = useState("");
-
-// //   const iframeRef = useRef(null);
-// //   const editorRefHTML = useRef(null);
-// //   const editorRefCSS = useRef(null);
-// //   const editorRefJS = useRef(null);
-
-// //   useEffect(() => {
-// //     const startStateHTML = EditorState.create({
-// //       doc: htmlCode,
-// //       extensions: [
-// //         keymap.of(defaultKeymap),
-// //         html(),
-// //         EditorView.updateListener.of((update) => {
-// //           if (update.docChanged) {
-// //             setHtmlCode(update.state.doc.toString());
-// //           }
-// //         }),
-// //       ],
-// //     });
-
-// //     const startStateCSS = EditorState.create({
-// //       doc: cssCode,
-// //       extensions: [
-// //         keymap.of(defaultKeymap),
-// //         css(),
-// //         EditorView.updateListener.of((update) => {
-// //           if (update.docChanged) {
-// //             setCssCode(update.state.doc.toString());
-// //           }
-// //         }),
-// //       ],
-// //     });
-
-// //     const startStateJS = EditorState.create({
-// //       doc: jsCode,
-// //       extensions: [
-// //         keymap.of(defaultKeymap),
-// //         javascript(),
-// //         EditorView.updateListener.of((update) => {
-// //           if (update.docChanged) {
-// //             setJsCode(update.state.doc.toString());
-// //           }
-// //         }),
-// //       ],
-// //     });
-
-// //     new EditorView({
-// //       state: startStateHTML,
-// //       parent: editorRefHTML.current,
-// //     });
-// //     new EditorView({
-// //       state: startStateCSS,
-// //       parent: editorRefCSS.current,
-// //     });
-// //     new EditorView({
-// //       state: startStateJS,
-// //       parent: editorRefJS.current,
-// //     });
-// //   }, []); // Only run once when the component mounts
-
-// //   // Function to run the front-end code
-// //   const runFrontEndCode = () => {
-// //     const code = `
-// //       <html>
-// //         <head>
-// //           <style>${cssCode}</style>
-// //         </head>
-// //         <body>
-// //           ${htmlCode}
-// //           <script>${jsCode}</script>
-// //         </body>
-// //       </html>
-// //     `;
-// //     if (iframeRef.current) {
-// //       iframeRef.current.srcdoc = code;
-// //     }
-// //   };
-
-// //   // Fake backend function
-// //   const runFakeBackend = () => {
-// //     setFakeBackendResponse("⏳ Processing request...");
-// //     setTimeout(() => {
-// //       setFakeBackendResponse(
-// //         `✅ Response: { "name": "John Doe", "age": ${Math.floor(
-// //           Math.random() * 30 + 20
-// //         )} }`
-// //       );
-// //     }, 2000);
-// //   };
-
-// //   return (
-// //     <div className="web-designing-container">
-// //       <div className="content-box">
-// //         <h1 className="main-heading">Frontend Development Editor</h1>
-// //         <p className="description">
-// //           Write HTML, CSS, and JavaScript code and see the live output instantly!
-// //         </p>
-
-// //         <div className="section">
-// //           <h2 className="sub-heading">HTML Code</h2>
-// //           <div ref={editorRefHTML} className="editor-container"></div>
-
-// //           <h2 className="sub-heading">CSS Code</h2>
-// //           <div ref={editorRefCSS} className="editor-container"></div>
-
-// //           <h2 className="sub-heading">JavaScript Code</h2>
-// //           <div ref={editorRefJS} className="editor-container"></div>
-// //         </div>
-
-// //         <button className="learn-btn" onClick={runFrontEndCode}>
-// //           Run Front-End Code
-// //         </button>
-
-// //         <button className="learn-btn" onClick={runFakeBackend}>
-// //           Run "Backend" Simulation
-// //         </button>
-
-// //         <p className="backend-response">{fakeBackendResponse}</p>
-
-// //         <iframe ref={iframeRef} className="output-frame" title="output"></iframe>
-// //       </div>
-// //     </div>
-// //   );
-// // };
-
-// // export default FullStackEditor;
-
-
-// // eslint-disable-next-line no-unused-vars
-// import React, { useState, useEffect, useRef } from "react";
-// import { EditorState } from "@codemirror/state";
-// import { EditorView, keymap } from "@codemirror/view";
-// import { defaultKeymap } from "@codemirror/commands";
-// import { html } from "@codemirror/lang-html";
-// import { javascript } from "@codemirror/lang-javascript";
-// import { css } from "@codemirror/lang-css";
-// import "./frontendEditor.css";
-
-// const FullStackEditor = () => {
-//   const [htmlCode, setHtmlCode] = useState("<h1>Hello, World!</h1>");
-//   const [cssCode, setCssCode] = useState("h1 { color: blue; }");
-//   const [jsCode, setJsCode] = useState("console.log('Hello from JS');");
-//   const [backendCode, setBackendCode] = useState(
-//     `const express = require('express');\nconst app = express();\n\napp.get('/', (req, res) => {\n  res.send('Hello from the server!');\n});\n\napp.listen(3000, () => {\n  console.log('Server is running');\n});`
-//   );
-
-//   const iframeRef = useRef(null);
-//   const editorRefHTML = useRef(null);
-//   const editorRefCSS = useRef(null);
-//   const editorRefJS = useRef(null);
-//   const editorRefBackend = useRef(null);
-
-//   useEffect(() => {
-//     const startStateHTML = EditorState.create({
-//       doc: htmlCode,
-//       extensions: [
-//         keymap.of(defaultKeymap),
-//         html(),
-//         EditorView.updateListener.of((update) => {
-//           if (update.docChanged) {
-//             setHtmlCode(update.state.doc.toString());
-//           }
-//         }),
-//       ],
-//     });
-
-//     const startStateCSS = EditorState.create({
-//       doc: cssCode,
-//       extensions: [
-//         keymap.of(defaultKeymap),
-//         css(),
-//         EditorView.updateListener.of((update) => {
-//           if (update.docChanged) {
-//             setCssCode(update.state.doc.toString());
-//           }
-//         }),
-//       ],
-//     });
-
-//     const startStateJS = EditorState.create({
-//       doc: jsCode,
-//       extensions: [
-//         keymap.of(defaultKeymap),
-//         javascript(),
-//         EditorView.updateListener.of((update) => {
-//           if (update.docChanged) {
-//             setJsCode(update.state.doc.toString());
-//           }
-//         }),
-//       ],
-//     });
-
-//     const startStateBackend = EditorState.create({
-//       doc: backendCode,
-//       extensions: [
-//         keymap.of(defaultKeymap),
-//         html(), // Using HTML extension for simplicity
-//         EditorView.updateListener.of((update) => {
-//           if (update.docChanged) {
-//             setBackendCode(update.state.doc.toString());
-//           }
-//         }),
-//       ],
-//     });
-
-//     new EditorView({
-//       state: startStateHTML,
-//       parent: editorRefHTML.current,
-//     });
-//     new EditorView({
-//       state: startStateCSS,
-//       parent: editorRefCSS.current,
-//     });
-//     new EditorView({
-//       state: startStateJS,
-//       parent: editorRefJS.current,
-//     });
-//     new EditorView({
-//       state: startStateBackend,
-//       parent: editorRefBackend.current,
-//     });
-//   }, []); // Runs only once when the component mounts
-
-//   // Function to run the front-end code
-//   const runFrontEndCode = () => {
-//     const code = `
-//       <html>
-//         <head>
-//           <style>${cssCode}</style>
-//         </head>
-//         <body>
-//           ${htmlCode}
-//           <script>${jsCode}</script>
-//         </body>
-//       </html>
-//     `;
-//     if (iframeRef.current) {
-//       iframeRef.current.srcdoc = code;
-//     }
-//   };
-
-//   // Function to show backend code as JSON
-//   const showBackendCodeAsJson = () => {
-//     const backendJson = JSON.stringify({ backendCode }, null, 2);
-//     alert(backendJson); // Alert me show karega backend ka JSON
-//   };
-
-//   return (
-//     <div className="web-designing-container">
-//       <div className="content-box">
-//         <h1 className="main-heading">Full-Stack Development Editor</h1>
-//         <p className="description">
-//           Write HTML, CSS, JavaScript for the frontend and view your backend code in JSON format!
-//         </p>
-
-//         <div className="section">
-//           <h2 className="sub-heading">HTML Code</h2>
-//           <div ref={editorRefHTML} className="editor-container"></div>
-
-//           <h2 className="sub-heading">CSS Code</h2>
-//           <div ref={editorRefCSS} className="editor-container"></div>
-
-//           <h2 className="sub-heading">JavaScript Code</h2>
-//           <div ref={editorRefJS} className="editor-container"></div>
-
-//           <h2 className="sub-heading">Backend Code (Node.js/Express)</h2>
-//           <div ref={editorRefBackend} className="editor-container"></div>
-
-//           {/* Backend Code JSON Output */}
-//           <h2 className="sub-heading">Backend Code (JSON Format)</h2>
-//           <div className="json-output">
-//             <pre>{JSON.stringify({ backendCode }, null, 2)}</pre>
-//           </div>
-//         </div>
-
-//         <button className="learn-btn" onClick={runFrontEndCode}>
-//           Run Front-End Code
-//         </button>
-
-//         <button className="learn-btn" onClick={showBackendCodeAsJson}>
-//           Show Backend Code as JSON
-//         </button>
-
-//         <iframe ref={iframeRef} className="output-frame" title="output"></iframe>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default FullStackEditor;
-
-
-import React, { useState, useRef } from "react";
-import { EditorState } from "@codemirror/state";
-import { EditorView, keymap } from "@codemirror/view";
-import { defaultKeymap } from "@codemirror/commands";
-import { html } from "@codemirror/lang-html";
-import "./frontendEditor.css";
-
-const FullStackEditor = () => {
-  const [htmlCode, setHtmlCode] = useState("<h1>Hello, World!</h1>");
-  const [cssCode, setCssCode] = useState("h1 { color: blue; }");
-  const [jsCode, setJsCode] = useState("console.log('Hello from JS');");
-  const [backendName, setBackendName] = useState("Guest User"); // Default Name
-
-  const iframeRef = useRef(null);
-  const editorRefHTML = useRef(null);
-
-  // Initialize CodeMirror Editor
-  React.useEffect(() => {
-    const startStateHTML = EditorState.create({
-      doc: htmlCode,
-      extensions: [
-        keymap.of(defaultKeymap),
-        html(),
-        EditorView.updateListener.of((update) => {
-          if (update.docChanged) {
-            setHtmlCode(update.state.doc.toString());
-          }
-        }),
-      ],
-    });
-
-    new EditorView({
-      state: startStateHTML,
-      parent: editorRefHTML.current,
-    });
-  }, []);
-
-  // Run Front-End Code
-  const runFrontEndCode = () => {
-    const code = `
-      <html>
-        <head>
-          <style>${cssCode}</style>
-        </head>
-        <body>
-          ${htmlCode}
-          <script>${jsCode}</script>
-        </body>
-      </html>
-    `;
-    if (iframeRef.current) {
-      iframeRef.current.srcdoc = code;
-    }
-  };
-
-  // Fake Backend Call
-  const runBackEndCode = () => {
-    const fakeBackendData = prompt("Enter your name for backend:") || "Guest User";
-    setBackendName(fakeBackendData);
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import "./visualisation.css";
+
+const FormToDBVisualization = () => {
+  const [submittedData, setSubmittedData] = useState(null);
+  const [serverData, setServerData] = useState(null);
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [showDatabase, setShowDatabase] = useState(false);
+  const [animateLine, setAnimateLine] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsProcessing(true);
+    setShowDatabase(false);
+    setAnimateLine(false);
+
+    const formData = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+    };
+
+    setServerData(formData);
+
+    setTimeout(() => {
+      setAnimateLine(true);
+    }, 1500);
+
+    setTimeout(() => {
+      setSubmittedData(formData);
+      setShowDatabase(true);
+      setServerData(null);
+      setIsProcessing(false);
+      setAnimateLine(false);
+    }, 3000);
   };
 
   return (
-    <div className="web-designing-container">
-      <div className="content-box">
-        <h1 className="main-heading">Full-Stack Development Editor</h1>
-        <p className="description">Write HTML, CSS, and JavaScript. Click "Run" to see the live output!</p>
+    <div className="container">
+      <div className="visualization">
+        <motion.div className="client-box" initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+          <h2>🖥️ Client</h2>
+          <form onSubmit={handleSubmit} className="form">
+            <input type="text" name="name" placeholder="Enter Name" required className="input-field" />
+            <input type="email" name="email" placeholder="Enter Email" required className="input-field" />
+            <button type="submit" className="submit-button">Send to Database</button>
+          </form>
+        </motion.div>
 
-        <h2 className="sub-heading">HTML Code</h2>
-        <div ref={editorRefHTML} className="editor-container"></div>
+        {animateLine && <motion.div className="line" initial={{ width: "0%" }} animate={{ width: "50%" }} transition={{ duration: 1 }}></motion.div>}
 
-        <button className="learn-btn" onClick={runFrontEndCode}>Run Front-End Code</button>
-        <button className="learn-btn" onClick={runBackEndCode}>Send Name to Backend</button>
-
-        {/* Backend Name Display */}
-        <div className="backend-name-display">Backend Name: {backendName}</div>
-
-        <iframe ref={iframeRef} className="output-frame" title="output"></iframe>
+        <motion.div className="server-box" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+          <h2>📡 Server</h2>
+          {serverData ? (
+            <>
+              <p><strong>Name:</strong> {serverData.name}</p>
+              <p><strong>Email:</strong> {serverData.email}</p>
+              <p className="processing">Processing...</p>
+            </>
+          ) : <p>Waiting for data...</p>}
+        </motion.div>
       </div>
+
+      {showDatabase && submittedData && (
+        <motion.div className="database-entry" initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }}>
+          <h3>📂 Database</h3>
+          <p><strong>Name:</strong> {submittedData.name}</p>
+          <p><strong>Email:</strong> {submittedData.email}</p>
+        </motion.div>
+      )}
     </div>
   );
 };
 
-export default FullStackEditor;
+export default FormToDBVisualization;
