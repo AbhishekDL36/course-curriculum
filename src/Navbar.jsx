@@ -11,7 +11,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
   return (
     <header className={`header ${darkMode ? 'dark' : ''}`}>
       <div className="logo">
-        <img src={logo} alt="Logo" className="logo-img" />
+        <img alt="Logo" className="logo-img" />
       </div>
 
       <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
